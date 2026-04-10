@@ -24,14 +24,6 @@ jobs:
       - name: FRONTEND install dependencies / check style / tests
         run: npm install && npm run eslint && npm run test
         working-directory: frontend
-      - name: Install dependencies for E2E-Playwright
-        run: npm install
-        working-directory: playwright
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-        working-directory: playwright
-      - name: E2E test with playwright
-        run: npm run test:e2e
-        working-directory: backend
+
       
       

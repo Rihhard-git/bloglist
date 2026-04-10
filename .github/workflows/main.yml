@@ -25,8 +25,8 @@ jobs:
         run: npm install
         working-directory: playwright
       - name: Check backend style        
-        run: npm run eslint
+        run: npm run lint
         working-directory: backend
       - name: Check frontend style        
-        run: npm run eslint
+        run: npm run lint
         working-directory: frontend

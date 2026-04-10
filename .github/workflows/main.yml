@@ -32,6 +32,7 @@ jobs:
         if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip')}}     
         run: curl ${{ secrets.RENDER_DEPLOY_HOOK }}
   failure:
+    needs: [build_and_test, deploy]
     runs-on: ubuntu-latest
     if: ${{ failure() }}
     steps:

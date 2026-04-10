@@ -27,8 +27,8 @@ jobs:
       - name: Install dependencies for E2E-Playwright
         run: npm install
         working-directory: playwright
-      - name: Create Build for testing
-        run: npm run build:ui && npm run start:test
+      - name: E2E test with playwright
+        run: npm run test:e2e
         working-directory: backend
       
       

@@ -1,0 +1,32 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Install dependencies for backend
+        run: npm install
+        working-directory: backend
+      - name: Install dependencies for frontend
+        run: npm install
+        working-directory: frontend
+      - name: Install dependencies for E2E-Playwright
+        run: npm install
+        working-directory: playwright
+      - name: Check backend style        
+        run: npm run lint
+        working-directory: backend
+      - name: Check frontend style        
+        run: npm run lint
+        working-directory: frontend

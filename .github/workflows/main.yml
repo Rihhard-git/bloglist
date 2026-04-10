@@ -15,8 +15,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
-      - name: Install dependencies for backend
-        run: npm install
+      - name: Install backend dependencies / check style
+        run: npm install && npm run eslint
         working-directory: backend
       - name: Install dependencies for frontend
         run: npm install
@@ -30,3 +30,6 @@ jobs:
       - name: Check frontend style        
         run: npm run eslint
         working-directory: frontend
+      - name: Check backend test
+        run: npm run test
+        working-directory: backend

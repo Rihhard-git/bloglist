@@ -15,6 +15,8 @@ app.use(middleware.requestLogger)
 app.use(middleware.tokenExtractor)
 app.use(express.static('dist'))
 
+
+
 app.use('/api/blogs', blogsRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/users', usersRouter)

@@ -21,15 +21,9 @@ jobs:
               SECRET: ${{ secrets.SECRET }}
         run: npm install && npm run eslint && npm run test
         working-directory: backend
-      - name: Install dependencies for frontend
-        run: npm install
+      - name: FRONTEND install dependencies / check style / tests
+        run: npm install && npm run eslint && npm run test
         working-directory: frontend
       - name: Install dependencies for E2E-Playwright
         run: npm install
         working-directory: playwright
-      - name: Check backend style        
-        run: npm run eslint
-        working-directory: backend
-      - name: Check frontend style        
-        run: npm run eslint
-        working-directory: frontend

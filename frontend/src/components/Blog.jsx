@@ -51,7 +51,7 @@ const Blog = (props) => {
                     <br/>
                     {blog.author}
                     <br/>
-                    {blog.user === props.user.id &&
+                    {blog.user === props.user &&
                     <button onClick={handleRemoveClick}>remove</button>
                     }
                 </div>}

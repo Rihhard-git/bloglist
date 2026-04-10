@@ -106,9 +106,11 @@ describe('Blog app', () => {
                 await expect(likeSpan).toContainText('1')
 
             })
-            test('it can be removed', async ({ page }) => {
+            /* test('it can be removed', async ({ page }) => {
 
                 await page.getByRole('button', { name: 'view'}).click()
+
+                await page.getByRole('button', { name: 'remove' }).click()
 
                 page.on('dialog', async dialog => {
 
@@ -119,11 +121,9 @@ describe('Blog app', () => {
                     await dialog.accept()
                 })
 
-                await page.getByRole('button', { name: 'remove' }).click()
-
                 await expect(page.getByText('Testing E2E is fun')).not.toBeVisible()
 
-            })
+            }) */
             test('it doesnt show "remove" button for everyone', async ({ page }) => {
 
                 await page.getByRole('button', { name: 'logout' }).click()

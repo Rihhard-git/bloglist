@@ -15,6 +15,12 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
-      - name: Install dependencies 
+      - name: Install dependencies for backend
         run: npm install
         working-directory: backend
+      - name: Install dependencies for frontend
+        run: npm install
+        working-directory: frontend
+      - name: Install dependencies for E2E-Playwright
+        run: npx playwright install --with-deps
+        working-directory: playwright

@@ -10,8 +10,7 @@
     "start:test": "cross-env NODE_ENV=test node --watch index.js",
     "build:ui": "rm -rf dist && cd ../frontend && npm install && npm run build && cp -r dist ../backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
-    "eslint": "eslint .",
-    "test:e2e": "npm run build:ui && cd .. && cd playwright && npm run test"
+    "eslint": "eslint ."
   },
   "author": "",
   "license": "ISC",

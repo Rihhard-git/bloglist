@@ -24,6 +24,12 @@ jobs:
       - name: FRONTEND install dependencies / check style / tests
         run: npm install && npm run eslint && npm run test
         working-directory: frontend
-
+  deploy:
+    needs: [build_and_test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deployment
+        if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip')}}     
+        run: curl ${{ secrets.RENDER_DEPLOY_HOOK }}
       
       

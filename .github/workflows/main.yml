@@ -29,7 +29,7 @@ jobs:
         working-directory: playwright
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-        working-directory: backend
+        working-directory: playwright
       - name: E2E test with playwright
         run: npm run test:e2e
         working-directory: backend

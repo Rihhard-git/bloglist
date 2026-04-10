@@ -3,12 +3,10 @@ const Blog = require('../models/blog')
 const User = require('../models/user')
 
 router.post('/reset', async (req, res) => {
-    await Blog.deleteMany({})
-    await User.deleteMany({})
+  await Blog.deleteMany({})
+  await User.deleteMany({})
 
-    console.log('trying to delete all')
-
-    res.status(204).end()
+  res.status(204).end()
 })
 
 module.exports = router

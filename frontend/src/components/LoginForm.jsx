@@ -10,8 +10,6 @@ const LoginForm = ({ setUser, setToken, notify }) => {
 
     const handleLogin = async (e) => {
         e.preventDefault()
-        console.log('logging in with', username, password)
-
         try {
             const user = await loginService.login({ username, password })
             setToken(user.token)
@@ -23,7 +21,6 @@ const LoginForm = ({ setUser, setToken, notify }) => {
             setPassword('')
         } catch {
             notify('wrong username or password', true)
-            console.log('error happened loggin in')
         }
     }
 

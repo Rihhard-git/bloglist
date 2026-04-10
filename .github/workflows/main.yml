@@ -31,5 +31,8 @@ jobs:
         run: npm run eslint
         working-directory: frontend
       - name: Check backend test
+        env:
+            TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+            SECRET: ${{ secrets.SECRET }}
         run: npm run test
         working-directory: backend

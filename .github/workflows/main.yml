@@ -22,5 +22,5 @@ jobs:
         run: npm install
         working-directory: frontend
       - name: Install dependencies for E2E-Playwright
-        run: npx playwright install --with-deps
+        run: npm install
         working-directory: playwright
